@@ -32,7 +32,7 @@ def main(ctx):
   ]
 
 # Generate pipeline for Linux platform compilers.
-def linux_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch="amd64", image="cppalliance/droneubuntu1604:1", buildtype="boost", environment={}, stepenvironment={}, jobuuid="", privileged=False):
+def linux_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch="amd64", image="cppalliance/droneubuntu1604:1", buildtype="boost", environment={}, jobuuid="", privileged=False):
   environment_global = {
       "TRAVIS_BUILD_DIR": "/drone/src",
 
@@ -55,14 +55,12 @@ def linux_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch
       "os": "linux",
       "arch": arch
     },
-    # Create env vars per generation arguments.
-    "environment": environment_current,
     "steps": [
       {
         "name": "Everything",
         "image": image,
         "privileged" : privileged,
-        "environment": stepenvironment,
+        "environment": environment_current,
         "commands": [
 
           "echo '==================================> SETUP'",
@@ -81,7 +79,7 @@ def linux_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch
     ]
   }
 
-def windows_cxx(name, cxx="g++", cxxflags="", packages="", llvm_os="", llvm_ver="", arch="amd64", image="cppalliance/dronevs2019", buildtype="boost", environment={}, stepenvironment={}, privileged=False):
+def windows_cxx(name, cxx="g++", cxxflags="", packages="", llvm_os="", llvm_ver="", arch="amd64", image="cppalliance/dronevs2019", buildtype="boost", environment={}, privileged=False):
   environment_global = {
       "CXX": cxx,
       "CXXFLAGS": cxxflags,
@@ -102,14 +100,12 @@ def windows_cxx(name, cxx="g++", cxxflags="", packages="", llvm_os="", llvm_ver=
       "os": "windows",
       "arch": arch
     },
-    # Create env vars per generation arguments.
-    "environment": environment_current,
     "steps": [
       {
         "name": "Everything",
         "image": image,
         "privileged": privileged,
-        "environment": stepenvironment,
+        "environment": environment_current,
         "commands": [
           "echo '==================================> SETUP'",
           "echo '==================================> PACKAGES'",
@@ -121,7 +117,7 @@ def windows_cxx(name, cxx="g++", cxxflags="", packages="", llvm_os="", llvm_ver=
       }
     ]
   }
-def osx_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch="amd64", image="cppalliance/droneubuntu1604:1", osx_version="", xcode_version="", buildtype="boost", environment={}, stepenvironment={}, jobuuid="", privileged=False):
+def osx_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch="amd64", image="cppalliance/droneubuntu1604:1", osx_version="", xcode_version="", buildtype="boost", environment={}, jobuuid="", privileged=False):
   environment_global = {
       # "TRAVIS_BUILD_DIR": "/drone/src",
       "CXX": cxx,
@@ -134,12 +130,8 @@ def osx_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch="
   environment_current=environment_global
   environment_current.update(environment)
 
-  # exec runner only has step-level environment variables:
-  environment_step = environment_current
-  environment_step.update(stepenvironment)
-
   if xcode_version:
-    environment_step["DEVELOPER_DIR"] = "/Applications/Xcode-" + xcode_version +  ".app/Contents/Developer"
+    environment_current.update({"DEVELOPER_DIR": "/Applications/Xcode-" + xcode_version +  ".app/Contents/Developer"})
     if not osx_version:
         if xcode_version[0:2] in [ "12","11","10"]:
             osx_version="catalina"
@@ -165,7 +157,7 @@ def osx_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch="
         "name": "Everything",
         # "image": image,
         "privileged" : privileged,
-        "environment": environment_step,
+        "environment": environment_current,
         "commands": [
 
           "echo '==================================> SETUP'",
@@ -181,5 +173,5 @@ def osx_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch="
     ]
   }
 
-def freebsd_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch="amd64", image="cppalliance/droneubuntu1604:1", buildtype="boost", environment={}, stepenvironment={}, jobuuid="", privileged=False):
+def freebsd_cxx(name, cxx, cxxflags="", packages="", llvm_os="", llvm_ver="", arch="amd64", image="cppalliance/droneubuntu1604:1", buildtype="boost", environment={}, jobuuid="", privileged=False):
     pass
