@@ -250,6 +250,7 @@ jobs:
         if: ${{ matrix.buildtype }} = boost
         shell: bash
         env:
+          TRAVIS_BRANCH: ${{ github.base_ref }}
           CXX: ${{ matrix.cxx }}
           CXXFLAGS: ${{ matrix.cxxflags }}
           SOURCES: ${{ matrix.sources }}
@@ -260,6 +261,7 @@ jobs:
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
           DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}
@@ -276,6 +278,7 @@ jobs:
         if: ${{ matrix.buildtype }} = b5847f804b-bbb3de2b00
         shell: bash
         env:
+          TRAVIS_BRANCH: ${{ github.base_ref }}
           CXX: ${{ matrix.cxx }}
           CXXFLAGS: ${{ matrix.cxxflags }}
           SOURCES: ${{ matrix.sources }}
@@ -286,6 +289,7 @@ jobs:
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
           DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}
@@ -302,6 +306,7 @@ jobs:
         if: ${{ matrix.buildtype }} = b5847f804b-ed45733e6c
         shell: bash
         env:
+          TRAVIS_BRANCH: ${{ github.base_ref }}
           CXX: ${{ matrix.cxx }}
           CXXFLAGS: ${{ matrix.cxxflags }}
           SOURCES: ${{ matrix.sources }}
@@ -312,6 +317,7 @@ jobs:
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
           DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}
@@ -328,6 +334,7 @@ jobs:
         if: ${{ matrix.buildtype }} = b5847f804b-db180b7bd2
         shell: bash
         env:
+          TRAVIS_BRANCH: ${{ github.base_ref }}
           CXX: ${{ matrix.cxx }}
           CXXFLAGS: ${{ matrix.cxxflags }}
           SOURCES: ${{ matrix.sources }}
@@ -338,6 +345,7 @@ jobs:
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
           DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}
@@ -354,6 +362,7 @@ jobs:
         if: ${{ matrix.buildtype }} = b5847f804b-cce9827eb5
         shell: bash
         env:
+          TRAVIS_BRANCH: ${{ github.base_ref }}
           CXX: ${{ matrix.cxx }}
           CXXFLAGS: ${{ matrix.cxxflags }}
           SOURCES: ${{ matrix.sources }}
@@ -364,6 +373,7 @@ jobs:
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
           DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}

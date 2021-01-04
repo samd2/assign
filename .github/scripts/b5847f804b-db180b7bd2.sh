@@ -2,10 +2,10 @@
 
 set -ex
 export TRAVIS_BUILD_DIR=$(pwd)
-export TRAVIS_BRANCH=$DRONE_BRANCH
-export TRAVIS_OS_NAME=${DRONE_JOB_OS_NAME:-linux}
-export VCS_COMMIT_ID=$DRONE_COMMIT
-export GIT_COMMIT=$DRONE_COMMIT
+export TRAVIS_BRANCH=${TRAVIS_BRANCH:-$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}
+export TRAVIS_OS_NAME=${CI_JOB_OS_NAME:-linux}
+export VCS_COMMIT_ID=$GITHUB_SHA
+export GIT_COMMIT=$GITHUB_SHA
 export DRONE_CURRENT_BUILD_DIR=$(pwd)
 export GHA_BUILD_DIR=$(pwd)
 export PATH=~/.local/bin:/usr/local/bin:$PATH
