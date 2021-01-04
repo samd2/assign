@@ -9,11 +9,11 @@ on:
       - githubactions*
       - feature/**
       - fix/**
-      - pr/**env:
+      - pr/**
 
+
+env:
     B2_VARIANT: variant=release,debug
-
-
 
 jobs:
   posix:
@@ -250,129 +250,129 @@ jobs:
         if: ${{ matrix.buildtype }} = boost
         shell: bash
         env:
-            CXX: ${{ matrix.cxx }}
-            CXXFLAGS: ${{ matrix.cxxflags }}
-            SOURCES: ${{ matrix.sources }}
-            LLVM_OS: ${{ matrix.llvm_os }}
-            LLVM_VER: ${{ matrix.llvm_ver }}
-            B2_TOOLSET: ${{ matrix.b2_toolset }}
-            B2_CXXSTD: ${{ matrix.b2_cxxstd }}
-            DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
-            B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-            DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-            COMMENT: ${{ matrix.comment }}
-            B2_DEFINES: ${{ matrix.b2_defines }}
-            B2_VARIANT: ${{ matrix.b2_variant }}
-            B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
-            UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
-            B2_TESTFLAGS: ${{ matrix.b2_testflags }}
-            VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
+          CXX: ${{ matrix.cxx }}
+          CXXFLAGS: ${{ matrix.cxxflags }}
+          SOURCES: ${{ matrix.sources }}
+          LLVM_OS: ${{ matrix.llvm_os }}
+          LLVM_VER: ${{ matrix.llvm_ver }}
+          B2_TOOLSET: ${{ matrix.b2_toolset }}
+          B2_CXXSTD: ${{ matrix.b2_cxxstd }}
+          DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
+          B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
+          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          COMMENT: ${{ matrix.comment }}
+          B2_DEFINES: ${{ matrix.b2_defines }}
+          B2_VARIANT: ${{ matrix.b2_variant }}
+          B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
+          UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
+          B2_TESTFLAGS: ${{ matrix.b2_testflags }}
+          VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-            BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-            ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
-            . .github/scripts/boost.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
+          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          . .github/scripts/boost.sh
        
       - name: b5847f804b-bbb3de2b00
         if: ${{ matrix.buildtype }} = b5847f804b-bbb3de2b00
         shell: bash
         env:
-            CXX: ${{ matrix.cxx }}
-            CXXFLAGS: ${{ matrix.cxxflags }}
-            SOURCES: ${{ matrix.sources }}
-            LLVM_OS: ${{ matrix.llvm_os }}
-            LLVM_VER: ${{ matrix.llvm_ver }}
-            B2_TOOLSET: ${{ matrix.b2_toolset }}
-            B2_CXXSTD: ${{ matrix.b2_cxxstd }}
-            DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
-            B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-            DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-            COMMENT: ${{ matrix.comment }}
-            B2_DEFINES: ${{ matrix.b2_defines }}
-            B2_VARIANT: ${{ matrix.b2_variant }}
-            B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
-            UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
-            B2_TESTFLAGS: ${{ matrix.b2_testflags }}
-            VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
+          CXX: ${{ matrix.cxx }}
+          CXXFLAGS: ${{ matrix.cxxflags }}
+          SOURCES: ${{ matrix.sources }}
+          LLVM_OS: ${{ matrix.llvm_os }}
+          LLVM_VER: ${{ matrix.llvm_ver }}
+          B2_TOOLSET: ${{ matrix.b2_toolset }}
+          B2_CXXSTD: ${{ matrix.b2_cxxstd }}
+          DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
+          B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
+          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          COMMENT: ${{ matrix.comment }}
+          B2_DEFINES: ${{ matrix.b2_defines }}
+          B2_VARIANT: ${{ matrix.b2_variant }}
+          B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
+          UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
+          B2_TESTFLAGS: ${{ matrix.b2_testflags }}
+          VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-            BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-            ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
-            . .github/scripts/b5847f804b-bbb3de2b00.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
+          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          . .github/scripts/b5847f804b-bbb3de2b00.sh
        
       - name: b5847f804b-ed45733e6c
         if: ${{ matrix.buildtype }} = b5847f804b-ed45733e6c
         shell: bash
         env:
-            CXX: ${{ matrix.cxx }}
-            CXXFLAGS: ${{ matrix.cxxflags }}
-            SOURCES: ${{ matrix.sources }}
-            LLVM_OS: ${{ matrix.llvm_os }}
-            LLVM_VER: ${{ matrix.llvm_ver }}
-            B2_TOOLSET: ${{ matrix.b2_toolset }}
-            B2_CXXSTD: ${{ matrix.b2_cxxstd }}
-            DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
-            B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-            DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-            COMMENT: ${{ matrix.comment }}
-            B2_DEFINES: ${{ matrix.b2_defines }}
-            B2_VARIANT: ${{ matrix.b2_variant }}
-            B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
-            UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
-            B2_TESTFLAGS: ${{ matrix.b2_testflags }}
-            VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
+          CXX: ${{ matrix.cxx }}
+          CXXFLAGS: ${{ matrix.cxxflags }}
+          SOURCES: ${{ matrix.sources }}
+          LLVM_OS: ${{ matrix.llvm_os }}
+          LLVM_VER: ${{ matrix.llvm_ver }}
+          B2_TOOLSET: ${{ matrix.b2_toolset }}
+          B2_CXXSTD: ${{ matrix.b2_cxxstd }}
+          DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
+          B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
+          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          COMMENT: ${{ matrix.comment }}
+          B2_DEFINES: ${{ matrix.b2_defines }}
+          B2_VARIANT: ${{ matrix.b2_variant }}
+          B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
+          UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
+          B2_TESTFLAGS: ${{ matrix.b2_testflags }}
+          VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-            BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-            ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
-            . .github/scripts/b5847f804b-ed45733e6c.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
+          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          . .github/scripts/b5847f804b-ed45733e6c.sh
        
       - name: b5847f804b-db180b7bd2
         if: ${{ matrix.buildtype }} = b5847f804b-db180b7bd2
         shell: bash
         env:
-            CXX: ${{ matrix.cxx }}
-            CXXFLAGS: ${{ matrix.cxxflags }}
-            SOURCES: ${{ matrix.sources }}
-            LLVM_OS: ${{ matrix.llvm_os }}
-            LLVM_VER: ${{ matrix.llvm_ver }}
-            B2_TOOLSET: ${{ matrix.b2_toolset }}
-            B2_CXXSTD: ${{ matrix.b2_cxxstd }}
-            DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
-            B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-            DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-            COMMENT: ${{ matrix.comment }}
-            B2_DEFINES: ${{ matrix.b2_defines }}
-            B2_VARIANT: ${{ matrix.b2_variant }}
-            B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
-            UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
-            B2_TESTFLAGS: ${{ matrix.b2_testflags }}
-            VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
+          CXX: ${{ matrix.cxx }}
+          CXXFLAGS: ${{ matrix.cxxflags }}
+          SOURCES: ${{ matrix.sources }}
+          LLVM_OS: ${{ matrix.llvm_os }}
+          LLVM_VER: ${{ matrix.llvm_ver }}
+          B2_TOOLSET: ${{ matrix.b2_toolset }}
+          B2_CXXSTD: ${{ matrix.b2_cxxstd }}
+          DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
+          B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
+          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          COMMENT: ${{ matrix.comment }}
+          B2_DEFINES: ${{ matrix.b2_defines }}
+          B2_VARIANT: ${{ matrix.b2_variant }}
+          B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
+          UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
+          B2_TESTFLAGS: ${{ matrix.b2_testflags }}
+          VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-            BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-            ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
-            . .github/scripts/b5847f804b-db180b7bd2.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
+          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          . .github/scripts/b5847f804b-db180b7bd2.sh
        
       - name: b5847f804b-cce9827eb5
         if: ${{ matrix.buildtype }} = b5847f804b-cce9827eb5
         shell: bash
         env:
-            CXX: ${{ matrix.cxx }}
-            CXXFLAGS: ${{ matrix.cxxflags }}
-            SOURCES: ${{ matrix.sources }}
-            LLVM_OS: ${{ matrix.llvm_os }}
-            LLVM_VER: ${{ matrix.llvm_ver }}
-            B2_TOOLSET: ${{ matrix.b2_toolset }}
-            B2_CXXSTD: ${{ matrix.b2_cxxstd }}
-            DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
-            B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-            DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-            COMMENT: ${{ matrix.comment }}
-            B2_DEFINES: ${{ matrix.b2_defines }}
-            B2_VARIANT: ${{ matrix.b2_variant }}
-            B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
-            UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
-            B2_TESTFLAGS: ${{ matrix.b2_testflags }}
-            VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
+          CXX: ${{ matrix.cxx }}
+          CXXFLAGS: ${{ matrix.cxxflags }}
+          SOURCES: ${{ matrix.sources }}
+          LLVM_OS: ${{ matrix.llvm_os }}
+          LLVM_VER: ${{ matrix.llvm_ver }}
+          B2_TOOLSET: ${{ matrix.b2_toolset }}
+          B2_CXXSTD: ${{ matrix.b2_cxxstd }}
+          DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
+          B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
+          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
+          COMMENT: ${{ matrix.comment }}
+          B2_DEFINES: ${{ matrix.b2_defines }}
+          B2_VARIANT: ${{ matrix.b2_variant }}
+          B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
+          UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
+          B2_TESTFLAGS: ${{ matrix.b2_testflags }}
+          VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-            BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-            ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
-            . .github/scripts/b5847f804b-cce9827eb5.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
+          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          . .github/scripts/b5847f804b-cce9827eb5.sh
        
