@@ -12,7 +12,7 @@ export PATH=~/.local/bin:/usr/local/bin:$PATH
 
 echo '==================================> BEFORE_INSTALL'
 
-. .drone/before-install.sh
+. .github/scripts/before-install.sh
 
 echo '==================================> INSTALL'
 
@@ -31,7 +31,7 @@ export BOOST_CI_SRC_FOLDER=$(pwd)
 
 echo '==================================> BEFORE_SCRIPT'
 
-. $DRONE_CURRENT_BUILD_DIR/.drone/before-script.sh
+. $GHA_BUILD_DIR/.github/before-script.sh
 
 echo '==================================> SCRIPT'
 
@@ -40,4 +40,4 @@ ci/travis/valgrind.sh
 
 echo '==================================> AFTER_SUCCESS'
 
-. $DRONE_CURRENT_BUILD_DIR/.drone/after-success.sh
+. $GHA_BUILD_DIR/.github/after-success.sh
