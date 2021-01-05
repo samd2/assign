@@ -31,7 +31,7 @@ export BOOST_CI_SRC_FOLDER=$(pwd)
 
 echo '==================================> BEFORE_SCRIPT'
 
-. $GHA_BUILD_DIR/.github/before-script.sh
+. $GHA_BUILD_DIR/.github/scripts/before-script.sh
 
 echo '==================================> SCRIPT'
 
@@ -42,4 +42,4 @@ fi
 
 echo '==================================> AFTER_SUCCESS'
 
-. $GHA_BUILD_DIR/.github/after-success.sh
+. $GHA_BUILD_DIR/.github/scripts/after-success.sh
