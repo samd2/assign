@@ -242,10 +242,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Install packages
-        if: matrix.packages
-        run: sudo apt install ${{ matrix.packages }}
       - name: boost
         if: ${{ matrix.buildtype }} = boost
         shell: bash
@@ -256,6 +252,7 @@ jobs:
           SOURCES: ${{ matrix.sources }}
           LLVM_OS: ${{ matrix.llvm_os }}
           LLVM_VER: ${{ matrix.llvm_ver }}
+          PACKAGES: ${{ matrix.packages }}
           B2_TOOLSET: ${{ matrix.b2_toolset }}
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
@@ -284,6 +281,7 @@ jobs:
           SOURCES: ${{ matrix.sources }}
           LLVM_OS: ${{ matrix.llvm_os }}
           LLVM_VER: ${{ matrix.llvm_ver }}
+          PACKAGES: ${{ matrix.packages }}
           B2_TOOLSET: ${{ matrix.b2_toolset }}
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
@@ -312,6 +310,7 @@ jobs:
           SOURCES: ${{ matrix.sources }}
           LLVM_OS: ${{ matrix.llvm_os }}
           LLVM_VER: ${{ matrix.llvm_ver }}
+          PACKAGES: ${{ matrix.packages }}
           B2_TOOLSET: ${{ matrix.b2_toolset }}
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
@@ -340,6 +339,7 @@ jobs:
           SOURCES: ${{ matrix.sources }}
           LLVM_OS: ${{ matrix.llvm_os }}
           LLVM_VER: ${{ matrix.llvm_ver }}
+          PACKAGES: ${{ matrix.packages }}
           B2_TOOLSET: ${{ matrix.b2_toolset }}
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
@@ -368,6 +368,7 @@ jobs:
           SOURCES: ${{ matrix.sources }}
           LLVM_OS: ${{ matrix.llvm_os }}
           LLVM_VER: ${{ matrix.llvm_ver }}
+          PACKAGES: ${{ matrix.packages }}
           B2_TOOLSET: ${{ matrix.b2_toolset }}
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
