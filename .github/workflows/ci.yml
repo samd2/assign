@@ -243,7 +243,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: boost
-        if: ${{ matrix.buildtype }} = boost
+        if: ${{ matrix.buildtype }} == boost
         shell: bash
         env:
           TRAVIS_BRANCH: ${{ github.base_ref }}
@@ -272,7 +272,7 @@ jobs:
           . .github/scripts/boost.sh
        
       - name: b5847f804b-bbb3de2b00
-        if: ${{ matrix.buildtype }} = b5847f804b-bbb3de2b00
+        if: ${{ matrix.buildtype }} == b5847f804b-bbb3de2b00
         shell: bash
         env:
           TRAVIS_BRANCH: ${{ github.base_ref }}
@@ -301,7 +301,7 @@ jobs:
           . .github/scripts/b5847f804b-bbb3de2b00.sh
        
       - name: b5847f804b-ed45733e6c
-        if: ${{ matrix.buildtype }} = b5847f804b-ed45733e6c
+        if: ${{ matrix.buildtype }} == b5847f804b-ed45733e6c
         shell: bash
         env:
           TRAVIS_BRANCH: ${{ github.base_ref }}
@@ -330,7 +330,7 @@ jobs:
           . .github/scripts/b5847f804b-ed45733e6c.sh
        
       - name: b5847f804b-db180b7bd2
-        if: ${{ matrix.buildtype }} = b5847f804b-db180b7bd2
+        if: ${{ matrix.buildtype }} == b5847f804b-db180b7bd2
         shell: bash
         env:
           TRAVIS_BRANCH: ${{ github.base_ref }}
@@ -359,7 +359,7 @@ jobs:
           . .github/scripts/b5847f804b-db180b7bd2.sh
        
       - name: b5847f804b-cce9827eb5
-        if: ${{ matrix.buildtype }} = b5847f804b-cce9827eb5
+        if: ${{ matrix.buildtype }} == b5847f804b-cce9827eb5
         shell: bash
         env:
           TRAVIS_BRANCH: ${{ github.base_ref }}
