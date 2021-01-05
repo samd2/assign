@@ -267,8 +267,8 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          ./.github/boost-ci/ci/drone/linux-cxx-install.sh
           . .github/scripts/boost.sh
        
       - name: b5847f804b-bbb3de2b00
@@ -296,8 +296,8 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          ./.github/boost-ci/ci/drone/linux-cxx-install.sh
           . .github/scripts/b5847f804b-bbb3de2b00.sh
        
       - name: b5847f804b-ed45733e6c
@@ -325,8 +325,8 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          ./.github/boost-ci/ci/drone/linux-cxx-install.sh
           . .github/scripts/b5847f804b-ed45733e6c.sh
        
       - name: b5847f804b-db180b7bd2
@@ -354,8 +354,8 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          ./.github/boost-ci/ci/drone/linux-cxx-install.sh
           . .github/scripts/b5847f804b-db180b7bd2.sh
        
       - name: b5847f804b-cce9827eb5
@@ -383,7 +383,7 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
-          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
-          ./.drone/boost-ci/ci/drone/linux-cxx-install.sh
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          ./.github/boost-ci/ci/drone/linux-cxx-install.sh
           . .github/scripts/b5847f804b-cce9827eb5.sh
        
