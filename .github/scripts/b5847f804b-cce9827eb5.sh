@@ -3,11 +3,9 @@
 set -ex
 export TRAVIS_BUILD_DIR=$(pwd)
 export TRAVIS_BRANCH=${TRAVIS_BRANCH:-$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}
-export TRAVIS_OS_NAME=${GHA_JOB_OS_NAME:-linux}
 export VCS_COMMIT_ID=$GITHUB_SHA
 export GIT_COMMIT=$GITHUB_SHA
-export DRONE_CURRENT_BUILD_DIR=$(pwd)
-export GHA_BUILD_DIR=$(pwd)
+export REPO_NAME=$(basename $GITHUB_REPOSITORY)
 export PATH=~/.local/bin:/usr/local/bin:$PATH
 
 echo '==================================> BEFORE_INSTALL'
@@ -23,7 +21,7 @@ if [ "$TRAVIS_OS_NAME" == "osx" ]; then
     unset -f cd
 fi
 
-export SELF=`basename $TRAVIS_BUILD_DIR`
+export SELF=`basename $REPO_NAME`
 export BOOST_CI_TARGET_BRANCH="$TRAVIS_BRANCH"
 export BOOST_CI_SRC_FOLDER=$(pwd)
 
@@ -31,7 +29,7 @@ export BOOST_CI_SRC_FOLDER=$(pwd)
 
 echo '==================================> BEFORE_SCRIPT'
 
-. $GHA_BUILD_DIR/.github/scripts/before-script.sh
+. $GITHUB_WORKSPACE/.github/scripts/before-script.sh
 
 echo '==================================> SCRIPT'
 
@@ -42,4 +40,4 @@ fi
 
 echo '==================================> AFTER_SUCCESS'
 
-. $GHA_BUILD_DIR/.github/scripts/after-success.sh
+. $GITHUB_WORKSPACE/.github/scripts/after-success.sh

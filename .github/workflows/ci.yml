@@ -258,8 +258,6 @@ jobs:
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}
@@ -268,8 +266,11 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
+          echo '==================================> SETUP'
           BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          echo '==================================> PACKAGES'
           ./.github/boost-ci/ci/drone/linux-cxx-install.sh
+          echo '==================================> INSTALL AND COMPILE'
           . .github/scripts/boost.sh
        
       - name: b5847f804b-bbb3de2b00
@@ -288,8 +289,6 @@ jobs:
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}
@@ -298,8 +297,11 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
+          echo '==================================> SETUP'
           BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          echo '==================================> PACKAGES'
           ./.github/boost-ci/ci/drone/linux-cxx-install.sh
+          echo '==================================> INSTALL AND COMPILE'
           . .github/scripts/b5847f804b-bbb3de2b00.sh
        
       - name: b5847f804b-ed45733e6c
@@ -318,8 +320,6 @@ jobs:
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}
@@ -328,8 +328,11 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
+          echo '==================================> SETUP'
           BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          echo '==================================> PACKAGES'
           ./.github/boost-ci/ci/drone/linux-cxx-install.sh
+          echo '==================================> INSTALL AND COMPILE'
           . .github/scripts/b5847f804b-ed45733e6c.sh
        
       - name: b5847f804b-db180b7bd2
@@ -348,8 +351,6 @@ jobs:
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}
@@ -358,8 +359,11 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
+          echo '==================================> SETUP'
           BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          echo '==================================> PACKAGES'
           ./.github/boost-ci/ci/drone/linux-cxx-install.sh
+          echo '==================================> INSTALL AND COMPILE'
           . .github/scripts/b5847f804b-db180b7bd2.sh
        
       - name: b5847f804b-cce9827eb5
@@ -378,8 +382,6 @@ jobs:
           B2_CXXSTD: ${{ matrix.b2_cxxstd }}
           DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
           B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
-          DRONE_JOB_OS_NAME: ${{ matrix.drone_job_os_name }}
-          GHA_JOB_OS_NAME: ${{ matrix.gha_job_os_name }}
           COMMENT: ${{ matrix.comment }}
           B2_DEFINES: ${{ matrix.b2_defines }}
           B2_VARIANT: ${{ matrix.b2_variant }}
@@ -388,7 +390,75 @@ jobs:
           B2_TESTFLAGS: ${{ matrix.b2_testflags }}
           VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
         run: |
+          echo '==================================> SETUP'
           BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mkdir -p .github &&  mv boost-ci-$BOOST_CI_BRANCH .github/boost-ci
+          echo '==================================> PACKAGES'
           ./.github/boost-ci/ci/drone/linux-cxx-install.sh
+          echo '==================================> INSTALL AND COMPILE'
           . .github/scripts/b5847f804b-cce9827eb5.sh
+       
+  windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+  osx:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "B2_TOOLSET=clang B2_CXXSTD=03,11,17 Job 12"
+            buildtype: "boost"
+            packages: "binutils-gold gdb libc6-dbg"
+            os: "macos-10.15"
+            cxx: "g++"
+            cxxflags: ""
+            sources: ""
+            llvm_os: ""
+            llvm_ver: ""
+            b2_toolset: "clang"
+            b2_cxxstd: "03,11,17"
+            drone_job_uuid: "7b52009b64"
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: boost
+        #if: ${{ matrix.buildtype }} == boost
+        if: matrix.buildtype == 'boost'
+        shell: bash
+        env:
+          TRAVIS_BRANCH: ${{ github.base_ref }}
+          CXX: ${{ matrix.cxx }}
+          CXXFLAGS: ${{ matrix.cxxflags }}
+          SOURCES: ${{ matrix.sources }}
+          LLVM_OS: ${{ matrix.llvm_os }}
+          LLVM_VER: ${{ matrix.llvm_ver }}
+          PACKAGES: ${{ matrix.packages }}
+          B2_TOOLSET: ${{ matrix.b2_toolset }}
+          B2_CXXSTD: ${{ matrix.b2_cxxstd }}
+          DRONE_JOB_UUID: ${{ matrix.drone_job_uuid }}
+          B2_CXXFLAGS: ${{ matrix.b2_cxxflags }}
+          COMMENT: ${{ matrix.comment }}
+          B2_DEFINES: ${{ matrix.b2_defines }}
+          B2_VARIANT: ${{ matrix.b2_variant }}
+          B2_LINKFLAGS: ${{ matrix.b2_linkflags }}
+          UBSAN_OPTIONS: ${{ matrix.ubsan_options }}
+          B2_TESTFLAGS: ${{ matrix.b2_testflags }}
+          VALGRIND_OPTS: ${{ matrix.valgrind_opts }}
+        run: |
+          echo '==================================> SETUP'
+          uname -a
+          BOOST_CI_ORG=boostorg BOOST_CI_BRANCH=master && /usr/local/bin/wget https://github.com/$BOOST_CI_ORG/boost-ci/archive/$BOOST_CI_BRANCH.tar.gz && tar -xvf $BOOST_CI_BRANCH.tar.gz && mv boost-ci-$BOOST_CI_BRANCH .drone/boost-ci
+          echo '==================================> PACKAGES'
+          ./.drone/boost-ci/ci/drone/osx-cxx-install.sh
+
+          echo '==================================> INSTALL AND COMPILE'
+          . .github/scripts/boost.sh
        
