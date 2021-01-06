@@ -397,16 +397,9 @@ jobs:
           echo '==================================> INSTALL AND COMPILE'
           . .github/scripts/b5847f804b-cce9827eb5.sh
        
-  windows:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
 
-    runs-on: ${{ matrix.os }}
 
-    steps:
-      - uses: actions/checkout@v2
+
   osx:
     strategy:
       fail-fast: false
@@ -469,3 +462,4 @@ jobs:
           echo '==================================> INSTALL AND COMPILE'
           . .github/scripts/boost.sh
        
+
