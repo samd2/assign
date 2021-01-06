@@ -421,6 +421,7 @@ jobs:
             sources: ""
             llvm_os: ""
             llvm_ver: ""
+            xcode_version: ""
             b2_toolset: "clang"
             b2_cxxstd: "03,11,17"
             drone_job_uuid: "7b52009b64"
@@ -429,6 +430,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Set DEVELOPER_DIR
+        if: matrix.xcode_version != ''
+        run: echo "::set-env name=DEVELOPER_DIR:/Applications/Xcode-:${{ matrix.xcode_version }}.app/Contents/Developer"
+      - name: Test DEVELOPER_DIR
+        run: echo $DEVELOPER_DIR
       - name: boost
         #if: ${{ matrix.buildtype }} == boost
         if: matrix.buildtype == 'boost'
