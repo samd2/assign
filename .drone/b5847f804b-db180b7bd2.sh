@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 set -ex
 export TRAVIS_BUILD_DIR=$(pwd)
 export DRONE_BUILD_DIR=$(pwd)
